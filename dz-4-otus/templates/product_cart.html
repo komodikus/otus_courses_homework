@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ware.name}}
+{% endblock %}
+{% block h1 %}
+{{ware.name}}
+{% endblock %}
+{% block content %}
+<div class="container">
+
+<div class="card mx-auto" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="mx-auto">
+      <img src="{{ware.image}}" class="mx-auto card-img" alt="...">
+    </div>
+    <div class="">
+      <div class="card-body">
+        <h5 class="card-title">{{ware.name}}</h5>
+        <p class="card-text">{{ware.description}}</p>
+        <p class="card-text lead">{{ware.long_description}}</p>
+          <div class="col"><a href="../" class="btn btn-primary">Вернуться на главную</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

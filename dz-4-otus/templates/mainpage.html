@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+Главная страница
+{% endblock %}
+{% block h1 %}
+My shop
+{% endblock %}
+{% block content %}
+<div class="container card-columns">
+{% for ware in wares %}
+<div class="card text-center" style="width: 18rem;">
+  <img src="{{ware.image}}" class="card-img-top" alt="{{ware.name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{ware.name}}</h5>
+    <p class="card-text">{{ware.description}}</p>
+    <p class="card-text">Цена - {{ware.price}}</p>
+      <div class="col"><a href="/product/{{ ware.id_ware }}" class="btn btn-primary">Посмотреть</a></div>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
