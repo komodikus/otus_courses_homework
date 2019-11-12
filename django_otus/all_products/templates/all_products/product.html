@@ -1,0 +1,16 @@
+{% extends "index/base.html" %}
+{% block body %}
+{% load static %}
+<div class="container">
+<div class="row">
+  <div class="col-4">
+    <img src="{{ware.image.url}}" class="card-img-top" alt="{{ware.name}}" width="150" height="400">
+  </div>
+  <div class="col-8">
+    <h2>{{ware.name_of_product}}</h2>
+    <p>{{ware.description}}</p>
+    <p>Цена - {{ware.price}} $</p>
+  </div>
+  </div>
+</div>
+{% endblock %}
