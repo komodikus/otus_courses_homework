@@ -1,0 +1,9 @@
+{% extends "my_blog/base.html" %}
+
+{% block content %}
+
+
+    {% load martortags %}
+    {{ article.text_article|safe_markdown }}
+
+{% endblock %}

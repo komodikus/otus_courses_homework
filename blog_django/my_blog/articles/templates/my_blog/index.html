@@ -1,0 +1,62 @@
+{% extends "my_blog/base.html" %}
+
+{% block content %}
+    <a href="articles/{{last_article.slug}}">
+      <div class="story main-story"  style="background: url({{last_article.image.url}});">
+          <span class="story-info">
+            <span class="story-title" style="font-size: {%if article.sub_title%} 300% {%else%} 400% {%endif%};">
+              {{last_article.title}}
+            </span>
+            <div class="clearfix">
+            </div>
+            <span class="story-subtitle">
+                {{last_article.sub_title}}
+            </span>
+            <div class="clearfix">
+
+            </div>
+            <div class="clearfix">
+
+            </div>
+          </span>
+      </div>
+    </a>
+    <div class="other-stories">
+    {% for article in last_four_articles %}
+
+
+
+        <a class="story mini-story" href="articles/{{article.slug}}" style="background: url({{article.image.url}}); font-size: {%if article.sub_title%} 200% {%else%} 300% {%endif%};">
+          <span class="story-info">
+            <span class="story-title">
+              {{article.title}}
+            </span>
+            <div class="clearfix">
+            </div>
+            <span class="story-subtitle">
+                {{article.sub_title}}
+            </span>
+            <div class="clearfix">
+
+            </div>
+            <div class="clearfix">
+
+            </div>
+          </span>
+        </a>
+
+
+    {% endfor %}
+    </div>
+
+    <div class="block-link-to-page-with-articles">
+        {% if articles.has_previous %}
+            <a href="?page={{ articles.previous_page_number }}">&lt&ltТудой</a>
+        {% endif %}
+
+        {% if articles.has_next %}
+            <a href="?page={{ articles.next_page_number }}">Судой&gt&gt</a>
+        {% endif %}
+    </div>
+
+{% endblock %}
